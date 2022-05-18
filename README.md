@@ -1,4 +1,4 @@
-# Duo Task
+# Flask-App-Alpine
 
 This is a basic Flask application that serves a simple static website that returns the machine's hostname.
 
