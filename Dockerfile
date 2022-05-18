@@ -9,7 +9,7 @@ COPY . /app
 RUN pip install -r "requirements.txt"
 
 # Set YOUR_NAME environment variable
-ENV YOUR_NAME="Piers"
+ENV YOUR_NAME="Trainee"
 
 # Expose the correct port
 EXPOSE 5500
