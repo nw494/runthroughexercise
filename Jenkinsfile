@@ -49,6 +49,7 @@ pipeline {
 				        docker run -d -p 80:5500 --name flaskapp eu.gcr.io/lbg-cloud-incubation/simpleflask:latest
 				        '''
 			        }
+                }
             }
         }
     }
