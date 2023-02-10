@@ -23,16 +23,16 @@ pipeline {
 				        sh '''
 				        ssh -i '/home/jenkins/.ssh/id_rsa' jenkins@35.246.70.5 << EOF
 				        docker rm -f nwflaskapp
-                        
+                        docker rmi eu.gcr.io/lbg-cloud-incubation/nwsimpleflask:latest
 				        '''
-						//docker rmi eu.gcr.io/lbg-cloud-incubation/nwsimpleflask:latest
+						
 			        } else if ("${GIT_BRANCH}" == 'origin/development') {
 				        sh '''
 				        ssh -i '/home/jenkins/.ssh/id_rsa' jenkins@34.105.233.150 << EOF
 				        docker rm -f nwflaskapp
-                        
+                        docker rmi eu.gcr.io/lbg-cloud-incubation/nwsimpleflask:latest
 				        '''
-						//docker rmi eu.gcr.io/lbg-cloud-incubation/nwsimpleflask:latest
+						
 			}
 		}
             }
