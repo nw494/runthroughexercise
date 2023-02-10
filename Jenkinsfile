@@ -21,14 +21,14 @@ pipeline {
                 script {
 			        if ("${GIT_BRANCH}" == 'origin/main') {
 				        sh '''
-				        ssh -i '/home/jenkins/.ssh/id_rsa' jenkins@34.105.190.2 << EOF
+				        ssh -i '/home/jenkins/.ssh/id_rsa' jenkins@35.246.70.5 << EOF
 				        docker rm -f nwflaskapp
                         
 				        '''
 						//docker rmi eu.gcr.io/lbg-cloud-incubation/nwsimpleflask:latest
 			        } else if ("${GIT_BRANCH}" == 'origin/development') {
 				        sh '''
-				        ssh -i '/home/jenkins/.ssh/id_rsa' jenkins@35.189.104.110 << EOF
+				        ssh -i '/home/jenkins/.ssh/id_rsa' jenkins@34.105.233.150 << EOF
 				        docker rm -f nwflaskapp
                         
 				        '''
@@ -42,12 +42,12 @@ pipeline {
                 script {
 			        if ("${GIT_BRANCH}" == 'origin/main') {
 				        sh '''
-				        ssh -i '/home/jenkins/.ssh/id_rsa' jenkins@34.105.190.2 << EOF
+				        ssh -i '/home/jenkins/.ssh/id_rsa' jenkins@35.246.70.5 << EOF
 				        docker run -d -p 80:5500 --name nwflaskapp eu.gcr.io/lbg-cloud-incubation/nwsimpleflask:latest
 				        '''
 			        } else if ("${GIT_BRANCH}" == 'origin/development') {
 				        sh '''
-				        ssh -i '/home/jenkins/.ssh/id_rsa' jenkins@35.189.104.110 << EOF
+				        ssh -i '/home/jenkins/.ssh/id_rsa' jenkins@34.105.233.150 << EOF
 				        docker run -d -p 80:5500 --name nwflaskapp eu.gcr.io/lbg-cloud-incubation/nwsimpleflask:latest
 				        '''
 			        }
